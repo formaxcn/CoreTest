@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs/CoreTest/v15
+/CoreBackEnd/bin
+/CoreASPNET/bin
+/CoreBackEnd/obj
+/CoreASPNET/obj
