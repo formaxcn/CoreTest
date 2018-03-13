@@ -1,6 +1,6 @@
 ﻿var HomeIndex = {
     init: function () {
-        alert("hello world");
+        //alert("hello world");
     }
 }
 

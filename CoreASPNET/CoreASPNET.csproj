@@ -6,10 +6,10 @@
 
   <ItemGroup>
     <PackageReference Include="log4net" Version="2.0.8" />
-    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" />
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.4" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +23,11 @@
   <ItemGroup>
     <ProjectReference Include="..\CoreBackEnd\CoreBackEnd.csproj" />
     <ProjectReference Include="..\CoreModel\CoreModel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Common\" />
+    <Folder Include="wwwroot\Resources\Home\" />
   </ItemGroup>
 
 </Project>
