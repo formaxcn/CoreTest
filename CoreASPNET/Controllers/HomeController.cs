@@ -19,5 +19,11 @@ namespace CoreASPNET.Controllers
         {
             return PartialView();
         }
+
+        [HttpGet]
+        public IActionResult Error()
+        {
+            return View();
+        }
     }
 }
