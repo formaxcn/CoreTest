@@ -7,10 +7,7 @@
 /CoreASPNET/bin
 /CoreBackEnd/obj
 /CoreASPNET/obj
-/CoreASPNET/bower_components
-/CoreASPNET/Properties/PublishProfiles
-/CoreASPNET/*.user
 /CoreASPNET/*.user
 /CoreASPNET/wwwroot/lib
-/CoreModel/bin/Debug/netcoreapp2.0
+/CoreModel/bin
 /CoreModel/obj
