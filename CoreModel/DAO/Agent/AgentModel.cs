@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CoreModel
+namespace CoreModel.DAO.Agent
 {
     public class AgentModel
     {

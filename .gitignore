@@ -11,3 +11,5 @@
 /CoreASPNET/wwwroot/lib
 /CoreModel/bin
 /CoreModel/obj
+/CoreDAL/obj
+/CoreDAL/bin/Debug/netcoreapp2.0

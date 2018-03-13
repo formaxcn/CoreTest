@@ -4,4 +4,12 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="DAO\User\" />
+    <Folder Include="Transfer\Agent\" />
+    <Folder Include="Transfer\User\" />
+    <Folder Include="VO\Agent\" />
+    <Folder Include="VO\User\" />
+  </ItemGroup>
+
 </Project>

@@ -13,6 +13,10 @@ namespace CoreASPNET.Filters
     {
         public void OnAuthorization(AuthorizationFilterContext context)
         {
+            //校验session
+            //!todo:放缓存校验
+
+            //todo:校验cookie
             var token = context.HttpContext.Request.Cookies["token"];
             if(!validateToken(token))
             {
