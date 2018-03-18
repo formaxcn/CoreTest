@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DAO\User\" />
     <Folder Include="Transfer\Agent\" />
     <Folder Include="Transfer\User\" />
     <Folder Include="VO\Agent\" />

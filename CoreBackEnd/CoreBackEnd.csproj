@@ -9,4 +9,8 @@
     <ProjectReference Include="..\CoreModel\CoreModel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="User\" />
+  </ItemGroup>
+
 </Project>
