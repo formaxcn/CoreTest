@@ -1,0 +1,2 @@
+bower init
+dotnet restore
