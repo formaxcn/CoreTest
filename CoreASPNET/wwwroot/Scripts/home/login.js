@@ -31,7 +31,6 @@
                 $.ajax({
                     type: "post",
                     url: "/Home/LoginUser",
-                    async: false,
                     dataType:"json",
                     data: {
                         "Email": mail,
