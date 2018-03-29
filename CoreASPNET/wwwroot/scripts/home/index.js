@@ -1,8 +1,10 @@
-﻿var HomeIndex = {
-    init: function () {
-        //alert("hello world");
+﻿var HomeIndex = (function () {
+    return {
+        init: function () {
+            //alert("hello world");
+        }
     }
-}
+}());
 
 $(document).ready(function () {
     HomeIndex.init();
