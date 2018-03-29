@@ -8,7 +8,6 @@
     <Folder Include="Transfer\Agent\" />
     <Folder Include="Transfer\User\" />
     <Folder Include="VO\Agent\" />
-    <Folder Include="VO\User\" />
   </ItemGroup>
 
 </Project>

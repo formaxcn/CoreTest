@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CoreModel.DAO.User
+namespace CoreModel.VO.User
 {
     public class AuthInfo
     {
-        String BaseToken { get; set; }
-        String ExtraToken { get; set; }
+        public String BaseToken { get; set; }
+        public String ExtraToken { get; set; }
     }
 }

@@ -1,4 +1,7 @@
 ﻿var HomeLogin = (function () {
+    var SHA512 = new Hashes.SHA512();
+    var BCrypt = dcodeIO.bcrypt;
+
     var bindEvent = function () {
         $('#loginForm').validate({
             rules: {
@@ -12,9 +15,7 @@
                 }
             },
             message: {
-                email: "Please enter a valid email address",
                 password: {
-                    required: "Please provide a password",
                     minlength: "More than 6 characters needed"
                 }
             }
@@ -25,7 +26,22 @@
                 var mail = $('#inputEmail').val();
                 var pass = $('#inputPassword').val();
                 var rememberMe = $('#rememberCheck')[0].checked;
-                debugger;
+
+                var hashPass = SHA512.hex(BCrypt.hashSync(SHA512.hex(pass) + mail));
+                $.ajax({
+                    type: "post",
+                    url: "/Home/LoginUser",
+                    async: false,
+                    dataType:"json",
+                    data: {
+                        "Email": mail,
+                        "HashPass": hashPass
+                    },
+                    success: function (rusult) {
+                        //todo: redirect to user index page
+                        debugger;
+                    }
+                });
             }
         });
     };

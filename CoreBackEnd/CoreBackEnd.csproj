@@ -5,12 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CoreDAL\CoreDAL.csproj" />
-    <ProjectReference Include="..\CoreModel\CoreModel.csproj" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="User\" />
+    <ProjectReference Include="..\CoreDAL\CoreDAL.csproj" />
+    <ProjectReference Include="..\CoreModel\CoreModel.csproj" />
   </ItemGroup>
 
 </Project>

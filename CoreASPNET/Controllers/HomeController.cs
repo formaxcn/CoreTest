@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+
+using CoreModel.VO.User;
+using CoreBackEnd.UserBiz;
 
 namespace CoreASPNET.Controllers
 {
@@ -24,6 +25,12 @@ namespace CoreASPNET.Controllers
         public IActionResult Error()
         {
             return View();
+        }
+
+        [HttpPost]
+        public String LoginUser(LoginUser user)
+        {
+            return JsonConvert.SerializeObject(LoginUserBiz.LoginAuth(user));
         }
     }
 }
