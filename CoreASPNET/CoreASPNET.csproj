@@ -30,15 +30,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Configs\" />
     <Folder Include="Views\Common\" />
     <Folder Include="wwwroot\Resources\Home\" />
   </ItemGroup>
-	
-  <Target Name="AfterBuild">
-    <ItemGroup>
-      <_CopyItems Include="Configs\*.*" />
-    </ItemGroup>
-    <Microsoft.Build.Tasks.Copy SourceFiles="@(_CopyItems)" DestinationFolder="$(OutputPath)\Configs" />
-  </Target>
+
+  <ItemGroup>
+    <Content Update="Configs\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>
