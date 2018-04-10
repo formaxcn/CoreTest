@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 
 using CoreModel.VO.User;
 using CoreBackEnd.UserBiz;
+using CoreBackEnd.Util;
 
 namespace CoreASPNET.Controllers
 {
@@ -17,6 +18,12 @@ namespace CoreASPNET.Controllers
 
         [HttpGet]
         public PartialViewResult Login()
+        {
+            return PartialView();
+        }
+
+        [HttpGet]
+        public PartialViewResult Regist()
         {
             return PartialView();
         }
