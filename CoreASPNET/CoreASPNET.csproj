@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.4" />
@@ -26,9 +30,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Configs\" />
     <Folder Include="Views\Common\" />
     <Folder Include="wwwroot\Resources\Home\" />
-    <Folder Include="Configs\" />
   </ItemGroup>
-
+	
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <_CopyItems Include="Configs\*.*" />
+    </ItemGroup>
+    <Microsoft.Build.Tasks.Copy SourceFiles="@(_CopyItems)" DestinationFolder="$(OutputPath)\Configs" />
+  </Target>
 </Project>
