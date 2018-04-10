@@ -19,6 +19,10 @@ namespace CoreASPNET
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration(builder =>
+                {
+                    builder.AddJsonFile("appsettings.json");
+                })
                 .UseStartup<Startup>()
                 .Build();
     }
