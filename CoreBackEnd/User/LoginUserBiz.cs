@@ -14,9 +14,13 @@ namespace CoreBackEnd.UserBiz
         {
             ResponseMsg responseMsg = new ResponseMsg();
             //todo: get user id reflect from cache
+            string userId = CommonUserDAL.getInstance().GetUserIdByMail(loginUser.Email);
             //todo: get user Model from cache
-            //todo: get user Model from db
-            CommonUser resultUser = CommonUserDAL.getInstance().GetUser(loginUser.Email);
+            CommonUser resultUser = null;
+            if (!String.IsNullOrEmpty(userId))
+            {
+                resultUser = CommonUserDAL.getInstance().GetUser(userId);
+            }
 
             if (resultUser == null)
             {

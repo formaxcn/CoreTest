@@ -23,6 +23,18 @@ namespace CoreDAL.DB.User
 
         }
 
+        public string GetUserIdByMail(string mail)
+        {
+            string sql = @"select userId
+                                from user.user
+                                where mail = @mail";
+            using(var connection = GetOpenConnection())
+            {
+                var userId = connection.QueryFirstOrDefault<string>(sql, new { mail = mail });
+                return userId;
+            }
+        }
+
         public CommonUser GetUser(string userId)
         {
             string sql = @"select id,userId,mail,alias,hashpass
