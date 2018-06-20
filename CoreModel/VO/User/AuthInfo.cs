@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CoreModel.DAO.User
+namespace CoreModel.VO.User
 {
     public class AuthInfo
     {

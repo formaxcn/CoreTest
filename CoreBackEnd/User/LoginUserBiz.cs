@@ -37,7 +37,11 @@ namespace CoreBackEnd.UserBiz
                 else
                 {
                     responseMsg.resultCode = 0;
-                    responseMsg.resultData = resultUser;
+                    //setToken
+                    AuthInfo authInfo = new AuthInfo();
+                    authInfo.BaseToken = "base";
+                    authInfo.ExtraToken = "extra";
+                    responseMsg.resultData = authInfo;
                 }
             }
             return responseMsg;

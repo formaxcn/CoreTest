@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CoreModel.DAO.User
 {
-    public class CommonUser : AuthInfo
+    public class CommonUser
     {
         public string Id { get; set; }
         public string Mail { get; set; }
