@@ -6,7 +6,7 @@ namespace CoreModel.DAO.User
 {
     public class AuthInfo
     {
-        public String BaseToken { get; set; }
-        public String ExtraToken { get; set; }
+        public string BaseToken { get; set; }
+        public string ExtraToken { get; set; }
     }
 }

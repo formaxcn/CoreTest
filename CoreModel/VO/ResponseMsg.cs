@@ -9,6 +9,6 @@ namespace CoreModel.VO
     {
         public int resultCode { get; set; }
         public Object resultData { get; set; }
-        public String resultMsg { get; set; }
+        public string resultMsg { get; set; }
     }
 }

@@ -4,7 +4,7 @@ namespace CoreModel.VO.Agent
 {
     public class AgentModel
     {
-        public String Id { get; set; }
-        public String CodeName { get; set; }
+        public string Id { get; set; }
+        public string CodeName { get; set; }
     }
 }

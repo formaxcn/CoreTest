@@ -6,8 +6,8 @@ namespace CoreModel.DAO.User
 {
     public class CommonUser : AuthInfo
     {
-        public String Id { get; set; }
-        public String Email { get; set; }
-        public String Alias { get; set; }
+        public string Id { get; set; }
+        public string Email { get; set; }
+        public string Alias { get; set; }
     }
 }

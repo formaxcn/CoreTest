@@ -6,8 +6,8 @@ namespace CoreModel.VO.User
 {
     public class LoginUser
     {
-        public String Email { get; set; } 
-        public String HashPass { get; set; }
-        public String RobotToken { get; set; }
+        public string Email { get; set; } 
+        public string HashPass { get; set; }
+        public string RobotToken { get; set; }
     }
 }
