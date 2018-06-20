@@ -12,6 +12,7 @@
 /CoreModel/bin
 /CoreModel/obj
 /CoreDAL/obj
-/CoreDAL/bin/Debug/netcoreapp2.0
-/CoreASPNET/Properties
 /CoreDAL/bin
+/CoreCommon/bin
+/CoreCommon/obj
+/CoreASPNET/Properties

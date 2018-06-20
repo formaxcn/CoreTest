@@ -1,5 +1,5 @@
 ﻿var HomeLogin = (function () {
-    var SHA512 = new Hashes.SHA512();
+    var SHA256 = new Hashes.SHA256();
     var BCrypt = dcodeIO.bcrypt;
 
     var bindEvent = function () {
@@ -27,7 +27,7 @@
                 var pass = $('#inputPassword').val();
                 var rememberMe = $('#rememberCheck')[0].checked;
 
-                var hashPass = SHA512.hex(BCrypt.hashSync(SHA512.hex(pass) + mail));
+                var hashPass = BCrypt.hashSync(mail + SHA256.hex(pass));
                 $.ajax({
                     type: "post",
                     url: "/Home/LoginUser",

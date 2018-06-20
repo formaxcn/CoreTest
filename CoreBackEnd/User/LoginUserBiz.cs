@@ -21,21 +21,24 @@ namespace CoreBackEnd.UserBiz
             {
                 resultUser = CommonUserDAL.getInstance().GetUser(userId);
             }
-
             if (resultUser == null)
             {
                 responseMsg.resultCode = 9000;
                 responseMsg.resultMsg = "User Not Exist";
             }
-            else if(resultUser.HashPass!=loginUser.HashPass)
-            {
-                responseMsg.resultCode = 9001;
-                responseMsg.resultMsg = "Pass Error";
-            }
             else
             {
-                responseMsg.resultCode = 0;
-                responseMsg.resultData = resultUser;
+                string plainText = resultUser.Mail + resultUser.HashPass;
+                if (!BCrypt.Net.BCrypt.Verify(plainText, loginUser.HashPass))
+                {
+                    responseMsg.resultCode = 9001;
+                    responseMsg.resultMsg = "Pass Error";
+                }
+                else
+                {
+                    responseMsg.resultCode = 0;
+                    responseMsg.resultData = resultUser;
+                }
             }
             return responseMsg;
         }
