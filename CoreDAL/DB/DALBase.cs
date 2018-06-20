@@ -10,7 +10,7 @@ namespace CoreDAL.DB
     public class DALBase
     {
         //todo: using connection pool
-        private static readonly string sqlConnectionString = ConfigurationUtil.GetAppSettings("Datebase.DefaultConnection");
+        private static readonly string sqlConnectionString = ConfigurationUtil.GetAppSettings("Database.ConnectionStrings:DefaultConnection");
 
         protected MySqlConnection _connection;
         protected MySqlConnection Connection => _connection ?? (_connection = GetOpenConnection());

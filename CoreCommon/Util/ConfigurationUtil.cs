@@ -8,7 +8,7 @@ namespace CoreCommon.Util
 {
     public static class ConfigurationUtil
     {
-        public static IConfiguration defaultConfig { get; set; }
+        public static IConfiguration DefaultConfig { get; set; }
 
         private static Dictionary<String, IConfiguration> ConfigurationDic { get; set; }
 
@@ -19,7 +19,7 @@ namespace CoreCommon.Util
             {
                 int splitIndex = key.LastIndexOf('.');
                 String configName = key;
-                IConfiguration fileConfig = defaultConfig;
+                IConfiguration fileConfig = DefaultConfig;
                 if (splitIndex > 0)
                 {
                     String fileName = key.Substring(0, splitIndex);

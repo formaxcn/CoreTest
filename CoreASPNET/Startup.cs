@@ -56,7 +56,7 @@ namespace CoreASPNET
         //读取配置文件进内存
         private void SetLocalConfiguration()
         {
-            ConfigurationUtil.defaultConfig = Configuration;
+            ConfigurationUtil.DefaultConfig = Configuration;
             //获取配置文件list
             var fileList = Configuration.GetSection("ConfigFiles").GetChildren()
                 .Select(item => new KeyValuePair<String, String>(item.Key, item.Value))
