@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CoreCommon.Util;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,7 +10,7 @@ namespace CoreDAL.DB
     public class DALBase
     {
         //todo: using connection pool
-        private static readonly string sqlConnectionString = "";
+        private static readonly string sqlConnectionString = ConfigurationUtil.GetAppSettings("Datebase.DefaultConnection");
 
         protected MySqlConnection _connection;
         protected MySqlConnection Connection => _connection ?? (_connection = GetOpenConnection());

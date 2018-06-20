@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using CoreBackEnd.Util;
+using CoreCommon.Util;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -27,7 +27,7 @@ namespace CoreASPNET
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IConfiguration>(Configuration);
-            setLocalConfiguration();
+            SetLocalConfiguration();
             services.AddMvc();
         }
 
@@ -54,7 +54,7 @@ namespace CoreASPNET
         }
 
         //读取配置文件进内存
-        private void setLocalConfiguration()
+        private void SetLocalConfiguration()
         {
             ConfigurationUtil.defaultConfig = Configuration;
             //获取配置文件list

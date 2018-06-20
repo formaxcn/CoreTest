@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CoreBackEnd.Util
+namespace CoreCommon.Util
 {
     public static class IdentityUtil
     {
@@ -24,26 +24,26 @@ namespace CoreBackEnd.Util
 
         public static String GenearateUserId()
         {
-            String result = getTimeStamp("yyyyMMddHHmm",12) + getMachineId() + getCount(GenerateType.UserId);
-            result += calculateVerify(result);
-            return mixString(result,24);
+            String result = GetTimeStamp("yyyyMMddHHmm",12) + GetMachineId() + GetCount(GenerateType.UserId);
+            result += CalculateVerify(result);
+            return MixString(result,24);
         }
 
         public static String GenerateBioId()
         {
-            String result = getTimeStamp("yyyyMMddHHmmss",16)  + getMachineId() + getCount(GenerateType.BioId);
-            result += calculateVerify(result);
-            return mixString(result,28);
+            String result = GetTimeStamp("yyyyMMddHHmmss",16)  + GetMachineId() + GetCount(GenerateType.BioId);
+            result += CalculateVerify(result);
+            return MixString(result,28);
         }
 
-        private static String getTimeStamp(String timeFormat,int timeLength)
+        private static String GetTimeStamp(String timeFormat,int timeLength)
         {
             String result = String.Empty;
-            result = mixString(DateTime.Now.ToString(timeFormat), timeLength);
+            result = MixString(DateTime.Now.ToString(timeFormat), timeLength);
             return result;
         }
 
-        private static String getCount(GenerateType countType)
+        private static String GetCount(GenerateType countType)
         {
             String result = String.Empty;
             int intervalSeconds = 3600;
@@ -60,22 +60,22 @@ namespace CoreBackEnd.Util
             }
             //calculate interval to reset
             CountModel countModel = lastGenerateTime.GetValueOrDefault(countType.ToString());
-            if ((DateTime.Now - countModel.countTime).TotalSeconds > intervalSeconds)
+            if ((DateTime.Now - countModel.CountTime).TotalSeconds > intervalSeconds)
             {
-                countModel.countTime = DateTime.Now;
-                countModel.countNumber = 0;
+                countModel.CountTime = DateTime.Now;
+                countModel.CountNumber = 0;
             }
-            long count = countModel.countNumber++;
-            result = mixString((count % 1000000).ToString(), 6);
+            long count = countModel.CountNumber++;
+            result = MixString((count % 1000000).ToString(), 6);
             return result;
         }
 
-        private static String getMachineId()
+        private static String GetMachineId()
         {
             return ConfigurationUtil.GetAppSettings("Env.ServerMachineId");
         }
 
-        private static String mixString(String inputString,int length)
+        private static String MixString(String inputString,int length)
         {
             String result = String.Empty;
             char[] timeStamp = inputString.PadLeft(length, '0').ToCharArray();
@@ -91,11 +91,11 @@ namespace CoreBackEnd.Util
             return result;
         }
 
-        private static string calculateVerify(string inputString)
+        private static string CalculateVerify(string inputString)
         {
             String result = String.Empty;
             Random random = new Random();
-            string rdString = mixString((random.Next() % 100).ToString(), 2);
+            string rdString = MixString((random.Next() % 100).ToString(), 2);
             byte[] bs = Encoding.ASCII.GetBytes(inputString + rdString);
             byte xorResult = bs[0];
             foreach(byte b in bs)
@@ -111,9 +111,9 @@ namespace CoreBackEnd.Util
     {
         public CountModel(DateTime date)
         {
-            this.countTime = date;
+            this.CountTime = date;
         }
-        public DateTime countTime { get; set; }
-        public long countNumber { get; set; }
+        public DateTime CountTime { get; set; }
+        public long CountNumber { get; set; }
     }
 }

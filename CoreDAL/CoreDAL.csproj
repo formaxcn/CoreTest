@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CoreCommon\CoreCommon.csproj" />
     <ProjectReference Include="..\CoreModel\CoreModel.csproj" />
   </ItemGroup>
 

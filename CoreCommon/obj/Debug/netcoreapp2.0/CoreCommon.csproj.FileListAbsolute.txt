@@ -1,0 +1,8 @@
+D:\Github\CoreTest\CoreCommon\obj\Debug\netcoreapp2.0\CoreCommon.csproj.CoreCompileInputs.cache
+D:\Github\CoreTest\CoreCommon\obj\Debug\netcoreapp2.0\CoreCommon.AssemblyInfoInputs.cache
+D:\Github\CoreTest\CoreCommon\obj\Debug\netcoreapp2.0\CoreCommon.AssemblyInfo.cs
+D:\Github\CoreTest\CoreCommon\bin\Debug\netcoreapp2.0\CoreCommon.deps.json
+D:\Github\CoreTest\CoreCommon\bin\Debug\netcoreapp2.0\CoreCommon.dll
+D:\Github\CoreTest\CoreCommon\bin\Debug\netcoreapp2.0\CoreCommon.pdb
+D:\Github\CoreTest\CoreCommon\obj\Debug\netcoreapp2.0\CoreCommon.dll
+D:\Github\CoreTest\CoreCommon\obj\Debug\netcoreapp2.0\CoreCommon.pdb

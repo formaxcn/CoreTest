@@ -1,17 +1,12 @@
 ﻿using CoreModel.DAO.User;
 using Dapper;
-using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Configuration;
 
 namespace CoreDAL.DB.User
 {
     public class CommonUserDAL:DALBase
     {
-        //todo: using connection pool
-        private static readonly String connectionString = "";
-
         private static CommonUserDAL instance = null;
     
         public static CommonUserDAL getInstance()
@@ -30,10 +25,10 @@ namespace CoreDAL.DB.User
 
         public CommonUser GetUser(string userId)
         {
-            string sql = @"select *
+            string sql = @"select id,userId,mail,alias,hashpass
                                 from user.user 
                                 where userId = @userId";
-            using (var connection = new MySqlConnection(connectionString))
+            using (var connection = GetOpenConnection())
             {
                 var user = connection.QueryFirstOrDefault<CommonUser>(sql,new { userId = userId });
                 return user;

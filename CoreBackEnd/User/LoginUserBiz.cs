@@ -23,6 +23,11 @@ namespace CoreBackEnd.UserBiz
                 responseMsg.resultCode = 9000;
                 responseMsg.resultMsg = "User Not Exist";
             }
+            else if(resultUser.HashPass!=loginUser.HashPass)
+            {
+                responseMsg.resultCode = 9001;
+                responseMsg.resultMsg = "Pass Error";
+            }
             else
             {
                 responseMsg.resultCode = 0;

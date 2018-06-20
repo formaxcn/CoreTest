@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace CoreBackEnd.Util
+namespace CoreCommon.Util
 {
     public static class ConfigurationUtil
     {
