@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CoreModel.VO.User
+namespace CoreModel.DAO.User
 {
-    public class User : AuthInfo
+    public class CommonUser : AuthInfo
     {
         public String Id { get; set; }
         public String Email { get; set; }
