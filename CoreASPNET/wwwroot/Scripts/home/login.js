@@ -37,6 +37,7 @@
                         "HashPass": hashPass
                     },
                     success: function (rusult) {
+                        //todo: set cookie
                         //todo: redirect to user index page
                         debugger;
                     }

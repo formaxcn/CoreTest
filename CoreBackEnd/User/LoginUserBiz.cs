@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CoreBackEnd.Helper;
 using CoreDAL.DB.User;
 using CoreModel.DAO.User;
 using CoreModel.VO;
@@ -38,9 +39,7 @@ namespace CoreBackEnd.UserBiz
                 {
                     responseMsg.resultCode = 0;
                     //setToken
-                    AuthInfo authInfo = new AuthInfo();
-                    authInfo.BaseToken = "base";
-                    authInfo.ExtraToken = "extra";
+                    AuthInfo authInfo = TokenHelper.GenerateAuthInfo(resultUser);
                     responseMsg.resultData = authInfo;
                 }
             }
